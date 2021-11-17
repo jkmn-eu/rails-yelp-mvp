@@ -1,0 +1,12 @@
+<div class="container d-flex justify-content-evenly col-row-2">
+  <% @restaurants.each do |r| %>
+  <div class="card" style='width: 20%;'>
+    <div class='card-body'>
+      <h5><%= r.name %></h5>
+      <p class='card-category'>
+      <p class='card-text'><%= r.address %></p>
+      <%= link_to "More details", restaurant_path(r) %>
+    </div>
+  </div>
+  <% end %>
+</div>

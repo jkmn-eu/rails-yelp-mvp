@@ -1,0 +1,9 @@
+<div class="container">
+  <%= simple_form_for @restaurant do |f| %>
+    <%= f.input :name, label: 'KOMEN KI SAPELLE LE RESTORAN', error: "Mets un nom ou ché mi qui t'en mets une" %>
+    <%= f.input :address, hint: 'No special characters.' %>
+    <%= f.input :phone_number, placeholder: '07 XX XX XX XX' %>
+    <%= f.input :category, as: :radio_buttons, collection: ["chinese", "italian", "japanese", "french", "belgian"] %>
+    <%= f.submit class: 'btn btn-blue' %>
+  <% end %>
+</div>
