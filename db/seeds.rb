@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'faker'
+puts 'destroying all entries'
+Restaurant.destroy_all
+
+puts 'defining valid values'
+valid = ["chinese", "italian", "japanese", "french", "belgian"]
+5.times do
+  instance = Restaurant.create(name: Faker::Restaurant.name,
+                    address: Faker::Address.full_address,
+                    phone_number: Faker::PhoneNumber.phone_number_with_country_code,
+                    category: valid.sample)
+  puts "Created #{instance.name}"
+end
+
+puts 'Creation completed'
